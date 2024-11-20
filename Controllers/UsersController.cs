@@ -81,7 +81,7 @@ namespace NexCart.Controllers
                 return Ok(new
                 {
                     Message = "Login successful",
-                    User = user
+                    UserDetails = user
                 });
             }
             catch (Exception ex)
