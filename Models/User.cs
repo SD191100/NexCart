@@ -8,17 +8,24 @@ namespace NexCart.Models
         public int UserId { get; set; }
 
         [Required, MaxLength(100)]
-        public string Name { get; set; }
+        public string? FirstName { get; set; }
+
+        [Required, MaxLength(100)]
+        public string? LastName { get; set; }
 
         [Required, EmailAddress]
-        public string Email { get; set; }
+        public string? Email { get; set; }
 
         [Required]
-        public string PasswordHash { get; set; }
+        public string? PasswordHash { get; set; }
+        [Required]
+        public string? ContactNumber { get; set; }
 
-        public string Address { get; set; }
-        public string ContactNumber { get; set; }
+        public bool IsActive { get; internal set; } = true;
+
         //navigations 
-        public ICollection<Order> Orders { get; set; }
+        public ICollection<Order>? Orders { get; set; }
+        public Address? address { get; set; }
+    
     }
 }
